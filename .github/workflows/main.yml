@@ -1,0 +1,19 @@
+name: Thử nghiệm đọc file README  # Tên quy trình
+
+on:
+  push:
+    branches: [ "main" ]  # Chạy khi push lên main
+
+jobs:
+  thuc_hanh_doc_file:
+    runs-on: ubuntu-latest  # Máy ảo Ubuntu của GitHub
+
+    steps:
+      - name: Bước 1 - Xin chào
+        run: echo "Hello HUTECH!"  # In ra màn hình
+
+      - name: Bước 2 - Tải code
+        uses: actions/checkout@v4  # Clone repo về máy ảo
+
+      - name: Bước 3 - Đọc file
+        run: cat README.md  # Hiển thị nội dung README
